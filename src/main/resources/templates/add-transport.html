@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Add Transport</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/shards.min.css">
+</head>
+<body>
+<div class="container my-5">
+    <h2 class="mb-5">New Transport</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <form action="#" th:action="@{/addtransport}" th:object="${transport}" method="post">
+
+
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="transporname" class="col-form-label">Transport Name</label>
+                        <input type="text" th:field="*{transporname}" class="form-control" id="transporname" placeholder="Name">
+                        <span th:if="${#fields.hasErrors('transporname')}" th:errors="*{transporname}" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="plates" class="col-form-label">Placas</label>
+                        <input type="text" th:field="*{plates}" class="form-control" id="plates" placeholder="Email">
+                        <span th:if="${#fields.hasErrors('plates')}" th:errors="*{plates}" class="text-danger"></span>
+                    </div>
+<!--                    <div class="form-group col-md-6">-->
+<!--                        <label for="tonsCapacity" class="col-form-label">Capacidad Toneladas</label>-->
+<!--                        <input type="number" th:field="*{tonsCapacity}" class="form-control" id="tonsCapacity" placeholder="tonsCapacity">-->
+<!--                        <span th:if="${#fields.hasErrors('tonsCapacity')}" th:errors="*{tonsCapacity}" class="text-danger"></span>-->
+<!--                    </div>-->
+                    <div class="form-group col-md-6">
+                        <label for="volumeCapacity" class="col-form-label">Capacidad Volumen</label>
+                        <input type="number" th:field="*{volumeCapacity}" class="form-control" id="volumeCapacity" placeholder="volumeCapacity">
+                        <span th:if="${#fields.hasErrors('volumeCapacity')}" th:errors="*{volumeCapacity}" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label>User:</label>
+                        <select th:field="*{employee}">
+                            <option th:each="p : ${employees}" th:value="${p.getId()}" th:text="${p.getName()}" />
+                        </select>
+                        <br/>
+                    </div>
+
+
+
+
+
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-5">
+                        <input type="submit" class="btn btn-primary" value="Add Transport">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
