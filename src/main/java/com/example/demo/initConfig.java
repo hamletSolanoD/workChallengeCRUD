@@ -14,8 +14,8 @@ public class initConfig {
 
         employee juan = new employee("Juan", "juanperez@gmail.com");
         employee maria = new employee("maria", "mariajuana@gmail.com");
-        transport car1 = new transport(juan,"Carro nuevo1");
-        transport car2 = new transport(maria,"Carro nuevo2");
+        transport car1 = new transport(juan,"Carro nuevo1","3FQ14FS");
+        transport car2 = new transport(maria,"Carro nuevo2","3TV24FS");
 
 
         employeeRepository.saveAll(List.of(maria,juan));

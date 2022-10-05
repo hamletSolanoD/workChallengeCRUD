@@ -20,22 +20,35 @@
         <table class="table table-striped table-responsive-md">
           <thead>
           <tr>
-            <th>Transport Name</th>
-            <th>Email</th>
+            <th>Nombre</th>
+            <th>Placas</th>
+            <th>Volumen</th>
+            <th>Toneladas</th>
+            <th>Coordenadas</th>
+            <th>Editar</th>
+            <th>Borrar</th>
+
+
           </tr>
           </thead>
 
           <tbody>
           <tr th:each="transport : ${transportsvalues}">
             <td th:text="${transport.getTransporname()}"></td>
-            <td th:text="${transport.getEmployee()}"></td>
+            <td th:text="${transport.getPlates()}"></td>
+            <td th:text="${transport.getTonsCapacity()}"></td>
+            <td th:text="${transport.getVolumeCapacity()}"></td>
+            <td th:text="${transport.getCoordenates()}"></td>
+            <td><a th:href="@{/edittransportpage/{id}(id=${transport.getId()})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td>
+            <td><a th:href="@{/deletetransport/{id}(id=${transport.getId()})}" class="btn btn-primary"><i class="fas fa-user-times ml-2"></i></a></td>
+
           </tr>
           </tbody>
 
         </table>
 
       </div>
-      <p class="my-5"><a href="/signup" class="btn btn-primary"><i class="fas fa-user-plus ml-2"></i></a>    <a href="/signup" class="btn btn-primary"><i class="fa fa-car ml-2"></i></a>         </p>
+      <p class="my-5"><a href="/signup" class="btn btn-primary"><i class="fas fa-user-plus ml-2"></i></a>    <a href="/addtransportpage" class="btn btn-primary"><i class="fa fa-car ml-2"></i></a>         </p>
 
     </div>
   </div>

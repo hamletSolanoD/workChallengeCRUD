@@ -29,15 +29,15 @@
                         <input type="text" th:field="*{plates}" class="form-control" id="plates" placeholder="Email">
                         <span th:if="${#fields.hasErrors('plates')}" th:errors="*{plates}" class="text-danger"></span>
                     </div>
-<!--                    <div class="form-group col-md-6">-->
-<!--                        <label for="tonsCapacity" class="col-form-label">Capacidad Toneladas</label>-->
-<!--                        <input type="number" th:field="*{tonsCapacity}" class="form-control" id="tonsCapacity" placeholder="tonsCapacity">-->
-<!--                        <span th:if="${#fields.hasErrors('tonsCapacity')}" th:errors="*{tonsCapacity}" class="text-danger"></span>-->
-<!--                    </div>-->
                     <div class="form-group col-md-6">
                         <label for="volumeCapacity" class="col-form-label">Capacidad Volumen</label>
                         <input type="number" th:field="*{volumeCapacity}" class="form-control" id="volumeCapacity" placeholder="volumeCapacity">
                         <span th:if="${#fields.hasErrors('volumeCapacity')}" th:errors="*{volumeCapacity}" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="tonsCapacity" class="col-form-label">Capacidad Toneladas</label>
+                        <input type="number" th:field="*{tonsCapacity}" class="form-control" id="tonsCapacity" placeholder="tonsCapacity">
+                        <span th:if="${#fields.hasErrors('tonsCapacity')}" th:errors="*{tonsCapacity}" class="text-danger"></span>
                     </div>
 
                     <div class="form-group col-md-6">

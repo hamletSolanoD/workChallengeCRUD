@@ -45,7 +45,6 @@ public class EmployeeController {
     public String showUpdateForm(@PathVariable("id") long id, Model model) {
         employee user = employeeRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
         model.addAttribute("user", user);
-
         return "update-user";
     }
 
@@ -57,7 +56,7 @@ public class EmployeeController {
     }
 
     @PostMapping("/update/{id}")
-    public String updateUser(@PathVariable("id") long id, @Valid employee user, BindingResult result, Model model) {
+    public String updateUser(@PathVariable("id") long id,  employee user, BindingResult result, Model model) {
         if (result.hasErrors()) {
             user.setId(id);
             return "update-user";
@@ -72,7 +71,6 @@ public class EmployeeController {
     public String deleteUser(@PathVariable("id") long id, Model model) {
         employee user = employeeRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
         employeeRepository.delete(user);
-
         return "redirect:/index";
     }
 }
